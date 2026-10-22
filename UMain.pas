@@ -52,7 +52,6 @@ implementation
 
 {$R *.dfm}
 
-uses DxfParser;
 
 procedure TFMain.FormCreate(Sender: TObject);
 var
@@ -69,9 +68,6 @@ begin
 end;
 
 procedure TFMain.LoadFile(const aFileName: string);
-var
-  Reader: TDxfReader;
-  P: TDxfPolyline;
 begin
   ParseDXF(aFileName,FParts);
   FreeAndNil(FResult);

@@ -120,11 +120,11 @@ begin
   while (not FEof) and (FCode <> 0) do begin
     case FCode of
       8:  wItem.Name := FValue;
-      10: wX := 100*StrToFloatDef(FValue, 0, FFS);
+      10: wX := StrToFloatDef(FValue, 0, FFS);
       20: begin
             Idx:=Length(wItem.Outline);
             SetLength(wItem.Outline,Idx+1);
-            wItem.Outline[Idx]:=PointD(wX,100*StrToFloatDef(FValue, 0, FFS));
+            wItem.Outline[Idx]:=PointD(wX,StrToFloatDef(FValue, 0, FFS));
           end;
     end;
     NextLine;
